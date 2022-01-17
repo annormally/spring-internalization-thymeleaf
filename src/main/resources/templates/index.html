@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{app.title}"></title>
+    <!-- Style -->
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            margin: 10px;
+        }
+
+        .navbar {
+            height: 60px;
+            width: 100%;
+            background: #3b3b3b;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-banner {
+            font-size: 34pt;
+        }
+
+        .nav-language {
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .container {
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Navigator -->
+<nav>
+    <div class="navbar">
+        <div class="nav-banner" th:text="#{banner.title}"></div>
+        <div class="nav-language">
+            <!-- Romanian -->
+            <button>
+                <a th:href="@{/index?language=ro}" th:text="#{app.lang.ro}"></a>
+            </button>
+
+            <!-- English -->
+            <button>
+                <a th:href="@{/index?language=en}" th:text="#{app.lang.en}"></a>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Container text -->
+<div class="container">
+    <!-- Spring -->
+    <div class="spring">
+        <h1 th:text="#{why.spring}"></h1>
+        <p th:text="#{spring}"></p>
+        <b>Source:</b><a href="">Spring</a>
+    </div>
+
+    <!-- Internalization -->
+    <div class="internalization">
+        <h1 th:text="#{internalization}"></h1>
+        <p th:text="#{internalization.content}"></p>
+        <b>Source:</b><a
+            href="https://docs.spring.io/spring-boot/docs/2.1.13.RELEASE/reference/html/boot-features-internationalization.html">Internalization</a>
+    </div>
+
+    <!-- Thymeleaf -->
+    <div class="thymeleaf">
+        <h1 th:text="#{thymeleaf}"></h1>
+        <p th:text="#{thymeleaf.content}"></p>
+        <b>Source:</b> <a href="https://www.thymeleaf.org/">Thymeleaf</a>
+    </div>
+</div>
+</body>
+
+</html>
